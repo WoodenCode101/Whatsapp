@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/fb00b1590a.js" crossorigin="anonymous"></script>
+    <title>Status</title>
+    <style>
+        * {
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(182, 182, 182);
+        }
+
+        .phone {
+            height: 570px;
+            width: 280px;
+            background-color: #222;
+            margin: auto;
+            border-radius: 26px;
+            display: flex;
+            box-shadow: -20px 10px 10px rgba(0, 0, 0, 0.4);
+
+        }
+
+        .screen {
+            height: 532px;
+            width: 265px;
+            background-color: rgb(97, 179, 134);
+            margin: 11px 8px;
+            border-radius: 23px;
+            overflow: hidden;
+            position: absolute;
+
+        }
+
+
+        /*time charge etc section*/
+        .time-charge {
+            margin-top: 5px;
+            margin-left: 10px;
+            color: rgb(233, 233, 233);
+            font-size: 12px;
+            font-family: sans-serif;
+            display: flex;
+        }
+
+        .time-charge .left i {
+            font-size: 9px;
+        }
+
+        .time-charge .left span {
+            margin-left: 39px;
+            color: black;
+            font-size: 12px;
+            border-radius: 50%;
+        }
+
+        .time-charge .right {
+            margin-left: 71px;
+        }
+
+        .time-charge .right span {
+            font-size: 14px;
+        }
+
+
+        /*whatsapp row starts*/
+        .whatsapp {
+            color: white;
+            font-family: sans-serif;
+            display: flex;
+            font-size: 15px;
+            margin-top: 10px;
+            padding-bottom: 20px;
+        }
+
+        .whatsapp .left {
+            margin-left: 10px;
+        }
+
+        .whatsapp .right {
+            margin-left: 135px;
+        }
+
+        .whatsapp .right .search a {
+            color: rgb(233, 233, 233);
+            font-size: 12px;
+        }
+
+        .whatsapp .right .threedot a {
+            margin-left: 20px;
+            color: rgb(233, 233, 233);
+            font-size: 12px;
+        }
+
+
+        /*chat status calls section*/
+        .chat-status {
+            display: flex;
+            align-items: center;
+            font-family: sans-serif;
+            padding-bottom: 5px;
+
+        }
+
+        .chat-status .camera a i {
+            margin: 5px;
+            margin-left: 7px;
+            color: rgb(216, 213, 213);
+        }
+
+        .chat-status .C_S_C a {
+            color: rgb(233, 233, 233);
+            margin-left: 22px;
+            font-size: 13px;
+        }
+
+        /*chattingbox starts*/
+        .chattingBox {
+            display: block;
+            height: 444px;
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 2px;
+
+        }
+
+        ::-webkit-scrollbar-track {
+            background: aliceblue;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: cadetblue;
+            border-radius: 50px;
+        }
+
+
+        /*2nd chat row*/
+        .me {
+            background-color: aliceblue;
+            height: 65px;
+            width: 99.8%;
+            margin-left: 0.3px;
+            display: flex;
+            align-items: center;
+            line-height: 13px;
+        }
+
+        .me .image img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            margin-left: 10px;
+        }
+
+        .me .name-chat .name {
+            font-size: 16px;
+            font-family: sans-serif;
+            margin-left: 10px;
+            margin-bottom: 7px;
+        }
+
+        .me .name-chat .chat {
+            margin-left: 10px;
+            font-size: 12px;
+            font-family: sans-serif;
+            color: rgb(119, 118, 118);
+        }
+
+        .me:hover {
+            background-color: rgb(238, 238, 238);
+        }
+
+        .recentUpdate {
+            background-color: aliceblue;
+            font-family: sans-serif;
+            color: rgb(119, 118, 118);
+            font-size: 13px;
+            padding-left: 10px;
+            padding-top: 5px;
+            padding-bottom: 515px;
+        }
+
+
+        .cornerpen{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: rgb(240, 240, 240);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+            position: absolute;
+            right: 16px;
+            bottom: 65px;
+
+            color: gray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cornercam {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: rgb(97, 179, 134);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        .plusIcon{
+            color: rgb(97, 179, 134);
+            margin-left: -15px;
+            margin-bottom: -23px;
+            font-size: 19px;
+            border: 1px solid white;
+            border-radius: 50%;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="phone">
+        <div class="screen">
+
+
+            <!--first row-->
+            <div class="time-charge">
+                <div class="left">
+                    2:25 <i class="fa-solid fa-signal"></i> VoLTE <span><i class="fa-solid fa-circle"></i></span>
+                </div>
+                <div class="right">
+                    <i class="fa-solid fa-moon"></i> <i class="fa-solid fa-volume-xmark"></i> <span><i
+                            class="fa-solid fa-battery-half"></i></span>
+                </div>
+            </div>
+
+
+            <!--second row-->
+            <div class="whatsapp">
+                <div class="left">
+                    WhatsApp
+                </div>
+                <div class="right">
+                    <span class="search"><a href="#"><i class="fa-solid fa-search"></i></a></span> <span
+                        class="threedot"><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></span>
+                </div>
+            </div>
+
+
+            <!--third row-->
+            <div class="chat-status">
+                <div class="camera">
+                    <a href="#"><i class="fa-solid fa-camera"></i></a>
+                </div>
+                <div class="C_S_C">
+                    <a href="index.html">CHATS</a>
+                    <a href="status.html">STATUS</a>
+                    <a href="calls.html">CALLS</a>
+                </div>
+            </div>
+
+
+            <div class="chattingBox">
+                <!--My status section-->
+                <div class="me">
+                    <div class="image">
+                        <a href="#"><img src="img3.jpg" alt="dp"></a>
+                    </div>
+                    <div class="plusIcon">
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </div>
+                    <div class="name-chat">
+                        <div class="name">
+                            My status
+                        </div>
+                        <div class="chat">
+                            Tap to add status update
+                        </div>
+                    </div>
+                </div>
+
+                <!--recent Updates section-->
+                <div class="recentUpdate">
+                    Recent Updates
+                </div>
+            </div>
+
+            <div class="cornerpen">
+                <i class="fa-solid fa-pen"></i>
+            </div>
+
+            <div class="cornercam">
+                <i class="fa-solid fa-camera"></i>
+            </div>
+
+        </div>
+    </div>
+
+    <!--
+        <i class="fa-solid fa-circle-plus"></i>
+        <i class="fa-solid fa-circle-camera"></i>
+        <i class="fa-solid fa-camera"></i>
+        <i class="fa-solid fa-pen-circle"></i>
+        <i class="fa-solid fa-pen"></i>
+    -->
+</body>
+
+</html>
